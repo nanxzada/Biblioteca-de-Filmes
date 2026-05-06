@@ -18,8 +18,24 @@ while True:
     '\n4- Buscar Filmes.'
     '\n5- Sair.\n'))
 
-    
+    if opcao == 1:
+        titulo = str(input('Insira o nome do filme: '))
+        categoria = str(input('Insira a categoria do filme: '))
+        anoLancamento = int(input('Insira o ano de lançamento do fIlme: '))
 
+        #insert
+        insert = f'INSERT INTO filme (titulo, categoria, anoLancamento) VALUES ("{titulo}","{categoria}",{anoLancamento})'
+        cursor.execute(insert)
+        connect.commit()
+        print(f'Filme {titulo}({anoLancamento}) adicionado com sucesso!')
+    
+    
+    
+    
+    elif opcao == 5:
+        print('Encerrando Programa!')
+        break
+print('encerrado.')
 
 
 
