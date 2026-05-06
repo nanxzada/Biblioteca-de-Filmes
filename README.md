@@ -7,4 +7,4 @@ Resolução de um problema do mundo real por meio da implementação de duas est
 conhecimentos de estruturas de dados, escolher duas para aplicar na resolução.
 
 Aplicação de MySQL com python, onde pode-se fazer um gerenciamento de biblioteca de filmes.
-Sendo possível reaizar CRUD com Python.
+Sendo possível realizar CRUD com Python.
