@@ -29,7 +29,16 @@ while True:
         connect.commit()
         print(f'Filme {titulo}({anoLancamento}) adicionado com sucesso!')
     
-    
+    elif opcao == 2: 
+        idFilme = int(input('Insira o ID do Filme que deseja editar: '))
+        novo_titulo = str(input('Insira o novo titulo: '))
+        nova_categoria = str(input('Insira a nova categoria: '))
+        novo_anoLancamento = int(input('Insira o novo ano de lançamento: '))
+        #update
+        update = f'UPDATE filme SET titulo = "{novo_titulo}", categoria = "{nova_categoria}", anoLancamento = {novo_anoLancamento} WHERE idFilme = {idFilme}'
+        cursor.execute(update)
+        connect.commit()
+        print('Filme atualizado com sucesso')
     
     
     elif opcao == 5:
