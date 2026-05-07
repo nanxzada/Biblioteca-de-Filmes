@@ -40,6 +40,16 @@ while True:
         connect.commit()
         print('Filme atualizado com sucesso')
     
+    elif opcao == 3:
+        idFilme = int(input('Digite o ID do filme que deseja excluir: '))
+        #delete
+        nome_filme = f'SELECT * FROM filme WHERE idFilme = {idFilme}'
+        cursor.execute(nome_filme)
+        nomeFilmeExcluido = cursor.fetchall()
+        delete = f'DELETE FROM filme WHERE idFilme = {idFilme}'
+        cursor.execute(delete)
+        connect.commit()
+        print(f'Filme Nº{idFilme}({nomeFilmeExcluido}) foi excluído com sucesso.')
     
     elif opcao == 5:
         print('Encerrando Programa!')
