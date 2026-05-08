@@ -51,6 +51,15 @@ while True:
         connect.commit()
         print(f'Filme Nº{idFilme}({nomeFilmeExcluido}) foi excluído com sucesso.')
     
+    elif opcao == 4:
+        #select
+        select = f'SELECT * FROM filme'
+        cursor.execute(select)
+        resultado = cursor.fetchall()
+        #loop FOR para exibição de filmes utilizando indices da LISTA de Filmes, que retorna as TUPLAS contendo: id, titulo, categoria e ano de lançamento.
+        for i in range(len(resultado)):
+            print(resultado[i])
+
     elif opcao == 5:
         print('Encerrando Programa!')
         break
