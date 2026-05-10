@@ -11,7 +11,7 @@ cursor = connect.cursor()
 
 print('Operando Biblioteca de Filmes')
 while True:
-    opcao = int(input('Selecione uma das opções:'
+    opcao = int(input('\nSelecione uma das opções:'
     '\n1- Adicionar Filme.' \
     '\n2- Editar Filme.' \
     '\n3- Excluir Filme.' \
@@ -19,15 +19,15 @@ while True:
     '\n5- Sair.\n'))
 
     if opcao == 1:
-        titulo = str(input('Insira o nome do filme: '))
-        categoria = str(input('Insira a categoria do filme: '))
-        anoLancamento = int(input('Insira o ano de lançamento do fIlme: '))
+        titulo = str(input('Insira o nome do filme: \n'))
+        categoria = str(input('Insira a categoria do filme: \n'))
+        anoLancamento = int(input('Insira o ano de lançamento do fIlme: \n'))
 
         #insert
         insert = f'INSERT INTO filme (titulo, categoria, anoLancamento) VALUES ("{titulo}","{categoria}",{anoLancamento})'
         cursor.execute(insert)
         connect.commit()
-        print(f'Filme {titulo}({anoLancamento}) adicionado com sucesso!')
+        print(f'\nFilme {titulo}({anoLancamento}) adicionado com sucesso!\n')
     
     elif opcao == 2: 
         idFilme = int(input('Insira o ID do Filme que deseja editar: '))
@@ -38,7 +38,7 @@ while True:
         update = f'UPDATE filme SET titulo = "{novo_titulo}", categoria = "{nova_categoria}", anoLancamento = {novo_anoLancamento} WHERE idFilme = {idFilme}'
         cursor.execute(update)
         connect.commit()
-        print('Filme atualizado com sucesso')
+        print('\nFilme atualizado com sucesso')
     
     elif opcao == 3:
         idFilme = int(input('Digite o ID do filme que deseja excluir: '))
@@ -49,7 +49,7 @@ while True:
         delete = f'DELETE FROM filme WHERE idFilme = {idFilme}'
         cursor.execute(delete)
         connect.commit()
-        print(f'Filme Nº{idFilme}({nomeFilmeExcluido}) foi excluído com sucesso.')
+        print(f'\nFilme Nº: {idFilme} ({nomeFilmeExcluido}) foi excluído com sucesso.')
     
     elif opcao == 4:
         #select
